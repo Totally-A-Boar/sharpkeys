@@ -1,5 +1,6 @@
+# This is not the original sharpkeys. This is a fork that aims to clean up certain aspects of the original application.
 ## Project Description
-SharpKeys is a utility that manages a Registry key that allows Windows to remap one key to any other key. Included in the application is a list of common keyboard keys and a Type Key feature to automatically recognize most keyboard keys. It was originally developed in C# using .NET v2 but has been updated to support .NET 4.0 Client Profile
+SharpKeys is a utility that manages a Registry key that allows Windows to remap one key to any other key. Included in the application is a list of common keyboard keys and a Type Key feature to automatically recognize most keyboard keys.
 
 ## Original Mission:
 This is something that I've thrown together to help people out with their keyboard mappings. What's a keyboard mapping? How many times a day do you accidentally hit cAPS lOCK BY MISTAKE AND END UP HAVING TO GO BAck and retype stuff? For me it was at least once an hour - in fact, I used to pop off the Caps Lock key so I wouldn't hit it anymore, but I found something better in Windows XP, as well as 2000, Server 2003, Vista, Windows 7, Windows 8, and Windows 10. There's a little used registry hack that allows you to remap keys across a keyboard. For me, this meant that I told my computer to treat Caps Lock as if it was a shift key, which it now does. 
@@ -12,32 +13,8 @@ SharpKeys is not responsible for any of the keyboard remapping functionality - i
 
 ### Manual via web or Microsoft Store
 
-Click the [Releases](https://github.com/randyrants/sharpkeys/releases) button in the header above or get the same MSI from the [Microsoft Store](https://apps.microsoft.com/store/detail/XPFFCG7M673D4F).
-
-Note: that for ARM versions of Windows, please use the ZIP file to get the EXE: the MSI is looking for x64/x86.
-
-### winget
-
-If you are using [WinGet](https://github.com/microsoft/winget-cli/releases) and want to install the MSI from GitHub
-
-```
-winget install -e RandyRants.SharpKeys
-```
-
-Likewise you can also install the Microsoft Store version of the app via WinGet by
-
-```
-winget install -e XPFFCG7M673D4F
-```
-
-### scoop
-
-If you are using [scoop](https://github.com/lukesampson/scoop)
-
-```
-scoop bucket add extras
-scoop install sharpkeys
-```
+Click the [Releases](https://github.com/randyrants/sharpkeys/releases) button in the header above or get the same MSI.
+Note: that while this fork does support ARM CPUs, Microsoft Store distribution is not supported.
 
 ## How do I use it?  Getting Started
 * Launch SharpKeys, by selecting its icon from the Start menu. If there are any errors reported, please check the Troubleshooting section below 
@@ -113,14 +90,7 @@ A: If you can get to a CMD window. you should be able to open regedit, which wil
 `reg delete "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout" /v "Scancode Map"` 
 Reboot after resetting the Registry value.
 
-## Existing saved keyboard layouts
-* Colemak - [SKL via GitHub](https://github.com/NathanDai5287/Keyboard-Layouts-for-SharpKeys) via [@NathanDai5287](https://github.com/NathanDai5287)
-* Surface - [SKL file described in the FAQ](https://github.com/randyrants/sharpkeys/blob/master/HandyRemapForSurfaceKeyboard.skl)
-
-## Hope for GitHub contributions:
-* A more complete list to support more international keyboards
-* ~~An import/export functionality that allows people to swap keymappings easier~~
-* Continued support for new .NET Frameworks
+On some PE systems, the registry editor will show the registry settings for the PE session. If this happens, click `HKEY_LOCAL_MACHINE` -> `File` -> `Load Hive` -> go to your original drive, `C:\Windows\System32\Config` and find a file named either SYSTEM, give it a random name, and delete the key as you would.
 
 ## Page for donations:
-Not calling attention to this, but [someone asked me to pop the link here](https://github.com/randyrants/sharpkeys/issues/387).  If you're interested, you can get more information [on my blog](https://www.randyrants.com/donate/).
+Not my project, but you should still go donate to the orignal author. [someone asked me to pop the link here](https://github.com/randyrants/sharpkeys/issues/387).  If you're interested, you can get more information [on my blog](https://www.randyrants.com/donate/).
